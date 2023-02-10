@@ -31,11 +31,17 @@ class ViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        coloredView.backgroundColor = UIColor(red: CGFloat(redComponent), green: CGFloat(greenComponent), blue: CGFloat(blueComponent), alpha: 1)
+        coloredView.backgroundColor = UIColor(
+            red: CGFloat(redComponent),
+            green: CGFloat(greenComponent),
+            blue: CGFloat(blueComponent),
+            alpha: 1
+        )
     }
 
     //MARK: - IBActions
     @IBAction func sliderAction(_ sender: UISlider) {
+        
         switch sender.tag {
         case 0:
             redValueLabel.text = String(format: "%.2f", sender.value)
