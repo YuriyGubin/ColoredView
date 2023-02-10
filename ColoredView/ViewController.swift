@@ -20,11 +20,6 @@ class ViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-    //MARK: - Properties
-    private var redComponent: Float = 0.5
-    private var greenComponent: Float = 0.5
-    private var blueComponent: Float = 0.5
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
@@ -32,9 +27,9 @@ class ViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         coloredView.backgroundColor = UIColor(
-            red: CGFloat(redComponent),
-            green: CGFloat(greenComponent),
-            blue: CGFloat(blueComponent),
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
             alpha: 1
         )
     }
@@ -45,13 +40,10 @@ class ViewController: UIViewController {
         switch sender.tag {
         case 0:
             redValueLabel.text = String(format: "%.2f", sender.value)
-            redComponent = sender.value
         case 1:
             greenValueLabel.text = String(format: "%.2f", sender.value)
-            greenComponent = sender.value
         default:
             blueValueLabel.text = String(format: "%.2f", sender.value)
-            blueComponent = sender.value
         }
     }
     
