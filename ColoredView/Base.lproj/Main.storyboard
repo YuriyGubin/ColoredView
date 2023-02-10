@@ -92,12 +92,21 @@
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="0hk-h2-t0B">
                                                 <rect key="frame" x="-2" y="0.0" width="240" height="31"/>
+                                                <connections>
+                                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="502-Hd-iyB"/>
+                                                </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pBv-2e-zko">
+                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pBv-2e-zko">
                                                 <rect key="frame" x="-2" y="51" width="240" height="31"/>
+                                                <connections>
+                                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="GDd-C6-bVd"/>
+                                                </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ad9-tX-kIo">
+                                            <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ad9-tX-kIo">
                                                 <rect key="frame" x="-2" y="102" width="240" height="31"/>
+                                                <connections>
+                                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="BaW-Em-GF8"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -116,6 +125,15 @@
                             <constraint firstItem="jg9-br-i3X" firstAttribute="top" secondItem="T3P-kv-ngL" secondAttribute="bottom" constant="45" id="tg8-7a-fTE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueSlider" destination="ad9-tX-kIo" id="TxR-X8-9Et"/>
+                        <outlet property="blueValueLabel" destination="l1m-vP-rJO" id="n2R-2r-1dH"/>
+                        <outlet property="coloredView" destination="T3P-kv-ngL" id="IOZ-xP-4ov"/>
+                        <outlet property="greenSlider" destination="pBv-2e-zko" id="b7e-rZ-0Xy"/>
+                        <outlet property="greenValueLabel" destination="y37-ba-h6O" id="tWd-YK-8Qe"/>
+                        <outlet property="redSlider" destination="0hk-h2-t0B" id="vXU-Cc-L3u"/>
+                        <outlet property="redValueLabel" destination="hIX-k6-2DO" id="8kD-Qn-2ae"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
