@@ -47,8 +47,10 @@ class ViewController: UIViewController {
         
         redSlider.minimumTrackTintColor = .red
         redSlider.maximumTrackTintColor = .red.withAlphaComponent(0.2)
+        
         greenSlider.minimumTrackTintColor = .green
         greenSlider.maximumTrackTintColor = .green.withAlphaComponent(0.2)
+        
         blueSlider.minimumTrackTintColor = .blue
         blueSlider.maximumTrackTintColor = .blue.withAlphaComponent(0.2)
     }
