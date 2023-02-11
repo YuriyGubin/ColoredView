@@ -29,6 +29,7 @@ class ViewController: UIViewController {
 
     //MARK: - IBActions
     @IBAction func sliderAction(_ sender: UISlider) {
+        
         setColor()
         
         switch sender{
