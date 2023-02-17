@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SettingsViewController.swift
 //  ColoredView
 //
 //  Created by Yuriy on 10.02.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SettingsViewController: UIViewController {
     
     //MARK: - IBOutlets
     @IBOutlet var coloredView: UIView!
