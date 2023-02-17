@@ -20,6 +20,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    var backgroundColor: UIColor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
