@@ -33,6 +33,7 @@ class SettingsViewController: UIViewController {
         setupElements()
         setValue()
         setColor()
+        initDelegatesForTextFields()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -59,7 +60,7 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func doneButtonPressed() {
-        
+        view.endEditing(true)
         delegate.setViewBackground(
             withColor: coloredView.backgroundColor ?? .white
         )
@@ -107,5 +108,77 @@ class SettingsViewController: UIViewController {
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
+    
+    private func initDelegatesForTextFields() {
+        redValueTF.delegate = self
+        greenValueTF.delegate = self
+        blueValueTF.delegate = self
+    }
 }
+
+// MARK: - UITextFieldDelegate
+extension SettingsViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let text = textField.text else {
+            showAlert(withTitle: "Wrong format!", andMessage: "Please enter correct value")
+            return
+        }
+        guard let currentValue = Float(text), (0...1).contains(currentValue) else {
+            showAlert(
+                withTitle: "Wrong format!",
+                andMessage: "Please enter correct value",
+                textField: textField
+            )
+            return
+        }
+        switch textField {
+        case redValueTF:
+            redSlider.setValue(currentValue, animated: true)
+            redValueLabel.text = string(from: redSlider)
+        case greenValueTF:
+            greenSlider.setValue(currentValue, animated: true)
+            greenValueLabel.text = string(from: greenSlider)
+        default:
+            blueSlider.setValue(currentValue, animated: true)
+            blueValueTF.text = string(from: blueSlider)
+        }
+        setColor()
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: textField,
+            action: #selector(resignFirstResponder)
+        )
+        
+        let flexBarButton = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace,
+            target: nil,
+            action: nil
+        )
+        
+        keyboardToolbar.items = [flexBarButton, doneButton]
+    }
+}
+
+// MARK: - Set Alert
+extension SettingsViewController {
+    private func showAlert(withTitle title: String, andMessage message: String, textField: UITextField? = nil) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            textField?.text = ""
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+}
+
 
