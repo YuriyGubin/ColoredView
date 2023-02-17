@@ -21,6 +21,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet var blueSlider: UISlider!
     
     var viewColor: UIColor!
+    var delegate: SettingsViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,11 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func doneButtonPressed() {
+        
+        delegate.setViewBackground(
+            withColor: coloredView.backgroundColor ?? .white
+        )
+        dismiss(animated: true)
     }
     
     //MARK: - Private methods

@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3P-kv-ngL">
-                                <rect key="frame" x="16" y="143" width="361" height="200"/>
+                                <rect key="frame" x="16" y="99" width="361" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jg9-br-i3X">
-                                <rect key="frame" x="16" y="388" width="361" height="132"/>
+                                <rect key="frame" x="16" y="344" width="361" height="132"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="h02-Hd-tIV" userLabel="ColorLabels">
                                         <rect key="frame" x="0.0" y="0.0" width="65" height="132"/>
@@ -166,7 +166,7 @@
                     <navigationItem key="navigationItem" id="qMF-t8-qNo">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="ptd-jb-DcO">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="P15-Ls-pvc"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="P15-Ls-pvc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
