@@ -20,10 +20,11 @@ class SettingsViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-    var backgroundColor: UIColor!
+    var viewColor: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         setupElements()
         setValue()
         setColor()
@@ -44,6 +45,10 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func doneButtonPressed() {
+    }
+    
     //MARK: - Private methods
     private func setupElements() {
         coloredView.layer.cornerRadius = 15
@@ -56,6 +61,11 @@ class SettingsViewController: UIViewController {
         
         blueSlider.minimumTrackTintColor = .blue
         blueSlider.maximumTrackTintColor = .blue.withAlphaComponent(0.2)
+        
+        let ciColor = CIColor(color: viewColor)
+        redSlider.value = Float(ciColor.red)
+        greenSlider.value = Float(ciColor.green)
+        blueSlider.value = Float(ciColor.blue)
     }
     
     private func setColor() {
