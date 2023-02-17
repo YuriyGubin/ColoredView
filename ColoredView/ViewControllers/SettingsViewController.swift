@@ -20,6 +20,10 @@ class SettingsViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    @IBOutlet var redValueTF: UITextField!
+    @IBOutlet var greenValueTF: UITextField!
+    @IBOutlet var blueValueTF: UITextField!
+    
     var viewColor: UIColor!
     var delegate: SettingsViewControllerDelegate!
     
@@ -30,6 +34,10 @@ class SettingsViewController: UIViewController {
         setValue()
         setColor()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 
     //MARK: - IBActions
     @IBAction func sliderAction(_ sender: UISlider) {
@@ -39,10 +47,13 @@ class SettingsViewController: UIViewController {
         switch sender{
         case redSlider:
             redValueLabel.text = string(from: sender)
+            redValueTF.text = string(from: sender)
         case greenSlider:
             greenValueLabel.text = string(from: sender)
+            greenValueTF.text = string(from: sender)
         default:
             blueValueLabel.text = string(from: sender)
+            blueValueTF.text = string(from: sender)
         }
     }
     
@@ -87,6 +98,10 @@ class SettingsViewController: UIViewController {
         redValueLabel.text = string(from: redSlider)
         greenValueLabel.text = string(from: greenSlider)
         blueValueLabel.text = string(from: blueSlider)
+        
+        redValueTF.text = string(from: redSlider)
+        greenValueTF.text = string(from: greenSlider)
+        blueValueTF.text = string(from: blueSlider)
     }
     
     private func string(from slider: UISlider) -> String {

@@ -113,23 +113,23 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="jbY-Ia-xXf" userLabel="TextFields">
                                         <rect key="frame" x="306" y="0.0" width="55" height="162"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yfZ-dp-NFb">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yfZ-dp-NFb">
                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="55" id="XS9-gd-gvv"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9R-Pb-x0Q">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9R-Pb-x0Q">
                                                 <rect key="frame" x="0.0" y="64" width="55" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3V4-Mn-FPV">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3V4-Mn-FPV">
                                                 <rect key="frame" x="0.0" y="128" width="55" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -165,11 +165,14 @@
                     <connections>
                         <outlet property="blueSlider" destination="ad9-tX-kIo" id="TxR-X8-9Et"/>
                         <outlet property="blueValueLabel" destination="l1m-vP-rJO" id="n2R-2r-1dH"/>
+                        <outlet property="blueValueTF" destination="3V4-Mn-FPV" id="xFb-Gg-42D"/>
                         <outlet property="coloredView" destination="T3P-kv-ngL" id="IOZ-xP-4ov"/>
                         <outlet property="greenSlider" destination="pBv-2e-zko" id="b7e-rZ-0Xy"/>
                         <outlet property="greenValueLabel" destination="y37-ba-h6O" id="tWd-YK-8Qe"/>
+                        <outlet property="greenValueTF" destination="j9R-Pb-x0Q" id="PAu-1m-aVv"/>
                         <outlet property="redSlider" destination="0hk-h2-t0B" id="vXU-Cc-L3u"/>
                         <outlet property="redValueLabel" destination="hIX-k6-2DO" id="8kD-Qn-2ae"/>
+                        <outlet property="redValueTF" destination="yfZ-dp-NFb" id="STi-jU-wjk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
